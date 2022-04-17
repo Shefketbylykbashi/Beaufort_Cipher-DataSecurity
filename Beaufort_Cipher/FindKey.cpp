@@ -29,6 +29,15 @@ class Key {
     }  
 };
 int main() {
+    string teksti;
+    string plain;
+    cout << "Mire se erdhet ne programin per gjetjen e celsit!"<<endl;
+    cout << "Shkruani plaintext-in: ";
+    cin >> plain;
+    cout << endl;
+    cout << "Shkruani ciphertext-in: ";
+    cin >> teksti;
+    Key v(teksti);
     
 string findKey = v.findKey(plain);
 cout << "Celesi: " << findKey << endl;
