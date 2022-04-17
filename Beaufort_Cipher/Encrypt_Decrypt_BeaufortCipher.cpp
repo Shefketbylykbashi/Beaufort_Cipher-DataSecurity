@@ -14,6 +14,15 @@ string beaufort(string text, string key) {
                 break;
             }
         }
+        int offSet = 0;
+        for (int j = start; j < start + 26; j++) {
+            int letter = j % 26;
+            if (alphabet[letter] == toupper(c1)) {
+                break;
+            }
+            offSet++;
+        }
+        cipher += alphabet[offSet];
 
     }
     return cipher;
