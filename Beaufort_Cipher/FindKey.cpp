@@ -3,6 +3,16 @@
 using namespace std;
 
 class Key {
+    public:
+     string k;
+    Key(string k) {
+        for (int i = 0; i < k.size(); ++i) {
+            if (k[i] >= 'A' && k[i] <= 'Z')
+                this->k += k[i];
+            else if (k[i] >= 'a' && k[i] <= 'z')
+                this->k += k[i] + 'A' - 'a';
+        }
+    }
 
   string findKey(string t) {
         string output;
