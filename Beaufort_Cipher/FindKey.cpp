@@ -3,8 +3,8 @@
 using namespace std;
 
 class Key {
-    public:
-     string k;
+public:
+    string k;
     Key(string k) {
         for (int i = 0; i < k.size(); ++i) {
             if (k[i] >= 'A' && k[i] <= 'Z')
@@ -14,14 +14,15 @@ class Key {
         }
     }
 
-  string findKey(string t) {
+    string findKey(string t) {
         string output;
         for (int i = 0, j = 0; i < t.length(); ++i) {
             char c = t[i];
             if (c >= 'a' && c <= 'z')
-                c += 'A' - 'a';
+             c += 'A' - 'a';
+               
             else if (c < 'A' || c > 'Z')
-                continue;
+            continue;
             output += (c + k[j] - 2 * 'A') % 26 + 'A'; //added 'A' to bring it in range of ASCII alphabet [ 65-90 | A-Z ]
             j = (j + 1) % k.length();
         }
@@ -39,6 +40,6 @@ int main() {
     cin >> teksti;
     Key v(teksti);
     
-string findKey = v.findKey(plain);
-cout << "Celesi: " << findKey << endl;
+    string findKey = v.findKey(plain);
+    cout << "Celesi: " << findKey << endl;
 }
